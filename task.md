@@ -1,17 +1,24 @@
-# Task 4.3 - Fix conflict (3)
+# Task 6 - Rebase
 
 ## Discuss About Previous Task
 
-After commit the change, your log will be like the follow:
+After revert the commit, your log will be like the follow:
 
 ```
-* (HEAD -> feature2) Task 4.2
+* (HEAD -> master) Revert "Task 5"
 |
 |
-* Task 4.1
+* Task 5
 |
 |
-* (master, feature1) Task 3
+* Merge branch 'feature2'
+|\
+| * (feature2) Task 4.2
+| |
+| * Task 4.1
+* | Task 4.3
+|/
+* (feature1) Task 3
 |
 |
 *  Task 2
@@ -20,40 +27,30 @@ After commit the change, your log will be like the follow:
 *  Task 1
 ```
 
-After checkout to "master" branch:
+The content of HEAD is the same as the content of "Merge branch 'feature2'".
 
-```
-* (feature2) Task 4.2
-|
-|
-* Task 4.1
-|
-|
-* (HEAD -> master, feature1) Task 3
-|
-|
-*  Task 2
-|
-|
-*  Task 1
-```
+`git revert` will revert to previous commit and create a new commit to save it.
 
-Note that you can't see "Task 4.1" and "Task 4.2" if you use the command `git log`.
+But Task 6 is generate, so the content of task file is different from the content of "Merge branch 'feature2'".
 
-Because `git log` only show all history until HEAD
-
-If you want to see all branches, use `--all` option.
+You can use `git stash` to stash current change and check task file.
 
 ## Description
 
-You should commit current change to "master". Then, we create a condition which will cause confilct.
+Welcome to the most difficult task !
 
-Merge "feature2" branch and solve it.
+In this task, you should rearrange the nodes: "Task 4.1", "Task 4.2" and "Task 4.3".
+
+Let these nodes locate at the same branch
 
 ## Steps
 
-1. Commit current change to branch "master"
-2. Merge branch "feature2" to branch "master"
-3. Solve conflict (Remove content of task 4.2)
-4. Commit after solve confict
+1. Commit current change
+2. Rebase "feature2" branch
 
+## Hint
+
+- `git rebase`
+- `git rebase --abort`
+- `git rebase --continue`
+- `git rebase --skip`
