@@ -21,7 +21,6 @@ After commit the change, your log will be like the follow:
 ```
 
 After checkout to "master" branch:
-
 ```
 * (feature2) Task 4.2
 |
@@ -56,3 +55,4 @@ Merge "feature2" branch and solve it.
 2. Merge branch "feature2" to branch "master"
 3. Solve conflict (Remove content of task 4.2)
 4. Commit after solve confict
+
