@@ -20,14 +20,13 @@ After you done previous task, your log will be like the follow:
 I hope you understand your log now.
 
 ```
-* (HEAD -> master) Merge branch 'feature2'
-|\
-| * (feature2) Task 4.2
-| |
-| * Task 4.1
-* | Task 4.3
-|/
-* (feature1) Task 3
+* (feature2) Task 4.2
+|
+|
+* Task 4.1
+|
+|
+* (HEAD -> master, feature1) Task 3
 |
 |
 *  Task 2
@@ -43,4 +42,3 @@ Just checkout to "master" branch.
 1. Commit current change to branch "feature2"
 2. Checkout to branch "master"
 
-- `git revert`
