@@ -1,20 +1,28 @@
-# Task 4.2 - Fix conflict (2)
+# Task 7 - Hook
 
 ## Discuss About Previous Task
 
-After you done previous task, your log will be like the follow:
+After rebase "feature2", your log will be like the follow:
 
 ```
-* (HEAD -> feature2) Task 4.1
+* (HEAD -> master) Task 6
 |
 |
-* Merge branch 'feature2'
-|\
-| * (feature2) Task 4.2
-| |
-| * Task 4.1
-* | Task 4.3
-|/
+* Revert "Task 5"
+|
+|
+* Task 5
+|
+|
+* Task 4.3
+|
+|
+* (feature2) Task 4.2
+|
+|
+* Task 4.1
+|
+|
 * (feature1) Task 3
 |
 |
@@ -24,18 +32,25 @@ After you done previous task, your log will be like the follow:
 *  Task 1
 ```
 
-I hope you understand your log now.
+If conflict is caused, you should solve conflict.
 
-`git revert` will revert to previous commit and create a new commit to save it.
+After solve conflict:
 
-Just checkout to "master" branch.
+1. Use `git rebase --continue` to apply your change.
+2. Use `git rebase --skip` to discard your change.
+
+You can use `git rebase --abort` to discard whole process of rebase.
+
+If conflict is not cause. The process of rebase will complete automatically. You have noting to do.
 
 ## Description
 
-1. Commit current change to branch "feature2"
-2. Checkout to branch "master"
+It's time to tell you the secret of this game - Why a new task is generated when you finish a task ?
 
-- `git rebase`
-- `git rebase --abort`
-- `git rebase --continue`
-- `git rebase --skip`
+Yes, I use git hook to control all flow of this game.
+
+Now, I hide a task in git hook. Find it and Finish it.
+
+## Hint
+
+Where is git hook ?

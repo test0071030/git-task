@@ -45,6 +45,6 @@ elif [ "$stage" = 5 ]; then
 fi
 
 # TODO: Remove "#" below and commit something
-# if [ "$stage" = "7" ]; then
-# 	$bin/gentask final
-# fi
+ if [ "$stage" = "7" ]; then
+ 	$bin/gentask final
+ fi
