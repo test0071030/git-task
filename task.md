@@ -56,3 +56,4 @@ Merge "feature2" branch and solve it.
 2. Merge branch "feature2" to branch "master"
 3. Solve conflict (Remove content of task 4.2)
 4. Commit after solve confict
+
