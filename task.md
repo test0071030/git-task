@@ -1,32 +1,42 @@
-# Task 3 - Auto merge
+# Task 4.1 - Fix conflict (1)
 
 ## Discuss About Previous Task
 
 After this task, your log will be like the follow:
 
 ```
-* (HEAD -> feature1) Task 2
+* (HEAD -> feature1) Task 3
+|
+|
+*  Task 2
 |
 |
 * (master) Task 1
 ```
 
-You create a node "Task 2". And this node is located "feature1" branch
+Note that "Task 2" and "Task 3" is located "feature1" branch. "Task 1" is located "master" branch.
+
+After merge, your log will be like the follow:
+
+```
+* (HEAD -> master, feature1) Task 3
+|
+|
+*  Task 2
+|
+|
+*  Task 1
+```
+
+Because "feature1" branch is based on "master" branch, the process of merging is just moving "master" to HEAD. And we call this process "fast forward".
 
 ## Description
 
-If you complete all issues at a branch, you can merge this branch to master branch.
+Previous section show the condition when no conflict should be solved. Now, you should try to solve conflict.
 
-If there is no conflict, it will merge automatically. Otherwise, you should solve the conflict and commit.
-
-Now, you should merge current branch to master branch.
+Before solve conflict, we will create a condition that will cause conflict when merge branch.
 
 ## Steps
 
-1. Commit current change
-2. Merge this branch to "master"
-
-## Hint
-
-- `git checkout`
-- `git merge`
+1. Checkout to a new branch named "feature2"
+2. Commit current change to branch "feature2"
